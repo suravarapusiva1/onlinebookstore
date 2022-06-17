@@ -10,6 +10,17 @@ pipeline{
             steps{
                 sh "mvn test"
             }
-        } 
+        }
+        stage("sonarcube anyalsis"){
+            environment{
+                def scannerHome = tool 'sonarQubescanner'
+            }
+            steps {
+                withSonarQubeEnv('sonarserver') {
+
+                    sh '${scannerHome}/opt/sonarqube/bin/sonar.sh'
+                }
+            }
+        }
     }
 }
