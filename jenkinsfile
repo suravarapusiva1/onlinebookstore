@@ -18,7 +18,7 @@ pipeline{
             steps {
                 withSonarQubeEnv('sonarserver') {
 
-                    sh "${scannerHome} mvn clean package sonar:sonar"
+                    sh "${scannerHome}/bin/sonar-scanner"
                 }
             }
         }
