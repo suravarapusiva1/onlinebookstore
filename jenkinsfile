@@ -13,7 +13,7 @@ pipeline{
         }
         stage("sonarcube anyalsis"){
             steps {
-                withSonarQubeEnv('sonarserver') {
+                withSonarQubeEnv('sonarserver 9.5') {
                  sh "mvn sonar:sonar"
                 }
             }
