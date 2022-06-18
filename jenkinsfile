@@ -12,15 +12,12 @@ pipeline{
             }
         }
         stage("sonarcube anyalsis"){
-            environment{
-                def scannerHome = tool 'sonarQubescanner'
+            steps{
+                def mvn = tool 'sonarQubescanner';
+                withSonarQubeEnv('sonarserver 9.5') {
+                    sh "${mvn}/bin/mvn clean verify sonar:sonar -Dsonar.projectKey=onlinebookstore"
+                 }
             }
-            steps {
-                withSonarQubeEnv('sonarserver') {
-
-                    sh "${scannerHome}/bin/sonar-scanner"
-                }
-            }
-        }
+        }       
     }
 }
