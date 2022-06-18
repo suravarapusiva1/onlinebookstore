@@ -20,7 +20,7 @@ pipeline{
             }
             steps {
                 withSonarQubeEnv('sonarserver 9.5') {
-                 sh " ${scannerHome} mvn sonar:sonar "
+                 sh " ${scannerHome} /opt/sonar/bin/sonar-scanner"
                 }
             }
         }
