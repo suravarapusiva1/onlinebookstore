@@ -13,7 +13,7 @@ pipeline{
         }
         stage("sonarcube anyalsis"){
             environment{
-                def scannerHome = tool 'sonarQubescanner 9.5'
+                def scannerHome = tool 'sonarQubescanner'
             }
             steps {
                 withSonarQubeEnv('sonarserver 9.5') {
