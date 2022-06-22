@@ -20,7 +20,7 @@ pipeline{
             }
             steps {
                 withSonarQubeEnv('sonarserver 9.5') {
-                 "mvn clean verify sonar:sonar \
+                sh "mvn clean verify sonar:sonar \
                  -Dsonar.projectKey=onlinebookstore \
                  -Dsonar.host.url=http://54.221.1.200:9092 \
                  -Dsonar.login=sqp_156154c887d7c065c29442944d34fcf4e3dd4dfe"
