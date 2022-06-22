@@ -1,8 +1,5 @@
 pipeline{
-    agent any 
-    environment{
-        PATH ="$PATH:/opt/Apache Maven 3.6.3/bin"
-    }
+    agent any
     stages{
         stage("built stage"){
             steps{
