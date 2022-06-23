@@ -13,14 +13,14 @@ pipeline{
         }
         stage("sonarcube anyalsis"){
             environment{
-                def scannerHome = tool 'sonarQubescanner'
+                def scannerHome = tool 'sonarQubescannersiva'
             }
             steps {
                 withSonarQubeEnv('sonarserver 9.5') {
                 sh "mvn clean verify sonar:sonar \
-                    -Dsonar.projectKey=online \
-                    -Dsonar.host.url=http://18.212.219.78:8081 \
-                    -Dsonar.login=sqp_e57a823bfe724b25e14f4d3e39ccff24885527a7"
+                     -Dsonar.projectKey=siva123 \
+                     -Dsonar.host.url=http://100.26.31.19:8081 \
+                     -Dsonar.login=sqp_e5c2fb294ef2163bd9459172f458fc76d1885760"
                 }
             }
         }
