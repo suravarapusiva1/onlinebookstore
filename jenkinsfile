@@ -18,9 +18,9 @@ pipeline{
             steps {
                 withSonarQubeEnv('sonarserver 9.5') {
                 sh "mvn clean verify sonar:sonar \
-                 -Dsonar.projectKey=onlinebookstore \
-                 -Dsonar.host.url=http://54.221.1.200:9092 \
-                 -Dsonar.login=sqp_156154c887d7c065c29442944d34fcf4e3dd4dfe"
+                    -Dsonar.projectKey=online \
+                    -Dsonar.host.url=http://18.212.219.78:8081 \
+                    -Dsonar.login=sqp_e57a823bfe724b25e14f4d3e39ccff24885527a7"
                 }
             }
         }
